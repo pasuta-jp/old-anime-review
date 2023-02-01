@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<html lang="ja">
+<!--AnimeScape-アニメ批評空間--->
+<title>AnimeScape-アニメ批評空間-</title>
+<script type="text/javascript" src="js/jquery-3.5.0.min.js"></script>
+
+<link rel="stylesheet" href="js/uikit.min.css">
+<script src="js/uikit.min.js"></script>
+
+<style>
+/*AnimeScape-アニメ批評空間-*/
+body{background-color:#FAFAD2}
+body{width:100%}
+.index{
+  background-color:#CCFFFF;
+  border-left:double 2px blue;
+  border-bottom:solid 2px blue}
+.index2{
+  border-bottom:solid 2px yellowgreen
+  }
+  #inline{
+    float:left;
+    margin-right:20px
+  }
+</style>
+</head>
+<body>
+  <script language="JavaScript"><!--
+
+  jQuery(function(){
+
+  /* ここにjQueryのコードを記述 */
+
+   });
+
+  --
+  window.alert("アニメが好きな方のみ当サイトをご利用ください。");
+  window.prompt("好きなアニメは何ですか？","");
+  alert("現在ご利用のブラウザは"+navigator.appName+"です。");
+
+
+
+  //CSVファイルを読み込む関数getCSV()の定義
+  function getCSV(){
+      var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
+      req.open("get", "data.csv", true); // アクセスするファイルを指定
+      req.send(null); // HTTPリクエストの発行
+
+      // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ
+      req.onload = function(){
+  	convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
+      }
+  }
+
+  // 読み込んだCSVデータを二次元配列に変換する関数convertCSVtoArray()の定義
+  function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列として渡される
+      var result = []; // 最終的な二次元配列を入れるための配列
+      var tmp = str.split("\n"); // 改行を区切り文字として行を要素とした配列を生成
+
+      // 各行ごとにカンマで区切った文字列を要素とした二次元配列を生成
+      for(var i=0;i<tmp.length;++i){
+          result[i] = tmp[i].split(',');
+      }
+
+      alert(result[1][2]); // 300yen
+  }
+
+  getCSV(); //最初に実行される
+
+
+//-->  </script>
+<h3>AnimeScape-アニメ批評空間-</h3>
+<h4 style="color:blue;text-decoration:underline">おかずにつかえるアニメ批評空間</h4>
+<!--<h1 style="width:50%;border:solid 2px black;background-color:silver">広告挿入</h1>-->
+<h1>
+<a href="http://palette.clearrave.co.jp/product/yukiiro/" target="_blank"><img src="http://palette.clearrave.co.jp/product/yukiiro/images/special/banner/600-140_01.jpg" alt="9-nine-ゆきいろゆきはなゆきのあと"></a>
+</h1>
+<div id="inline" style="width:13%">
+<h4 class="index">ログイン</h4>
+<p>ログインID
+  <br><input type="text" name="loginID" style="width:95%">
+  <br>パスワード
+  <br><input type="text" name="password" style="width:95%">
+  <br><input type="submit" value="ログイン">
+</p>
+<h4 class="index2">ログインメニュー</h4>
+<ul style="padding-left:10px">
+<li style="color:blue;text-decoration:underline">ログインメニュー</li>
+<li style="color:blue;text-decoration:underline">得点等入力メニュー</li>
+<li style="color:blue;text-decoration:underline">ログアウト</li>
+</ul>
+<h4 class="index">検索</h4>
+<form name "research">
+<select name="junle">
+  <option>アニメタイトル</option>
+  <option>監督名</option>
+  <option>制作会社</option>
+  <option>声優</option>
+  <option>キャラクター名</option>
+  <option>楽曲名</option>
+</select>
+<input type="text" name="research">
+<br>
+<input type="submit" value="検索">
+</div>
+<div id="inline" style="width:40%">
+<h4 class="index">お知らせ</h4>
+<h4 class="index2">このサイトについて</h4>
+<p>このサイトはアニメの批評を行うことができます.<br>
+<!--<img src="picture/サクカ.png";
+alt="自分の描いた絵" title="画像1" a href="#" width="300px" height="400px";
+ onClick="alert('アンチョビ姉さんからの一言\n「いっしょにパスタを食べよう！」')";
+ onmouseover="this.src='picture/バス.png'";
+ onmouseout="this.src='picture/サクカ.png'"/>-->
+<br>まずはユーザー登録をしてください.</p>
+<h4 class="index2">キャンペーン情報</h4>
+<p>アニメBlu-rayやグッズの発売予定などを表示します.</p>
+<h4 class="index2"/>音源情報</h4>
+<p>タイアップ別の音源情報を記載します.<br>
+左手検索窓からの歌手検索もご利用ください.</p>
+</div>
+<div id="inline" style="width:15%">
+<h4 class="index">広告</h4>
+<!--<h4 style="border:solid 2px black;background-color:silver; height:100px">広告</h4>-->
+<h4><a href="http://palette.clearrave.co.jp/product/yukiiro/" target="_blank"><img src="http://palette.clearrave.co.jp/product/yukiiro/images/special/banner/140-600_03.jpg" alt="9-nine-ゆきいろゆきはなゆきのあと"></a></h4>
+</div>
+</body>
+</html>
